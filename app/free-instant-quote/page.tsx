@@ -4,14 +4,14 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 const patchTypes = [
-  { id: 'embroidered', name: 'Embroidered Patches', image: 'https://www.bespokepatches.co.uk/frontend/images/sample/embroidered-patches/4.webp' },
-  { id: 'chenille', name: 'Chenille Badges', image: 'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/2.webp' },
-  { id: 'pvc', name: 'PVC / Rubber Badges', image: 'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/3.webp' },
-  { id: '3d-puff', name: '3D Puff Embroidery', image: 'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/4.webp' },
-  { id: 'woven', name: 'Woven Badges', image: 'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/5.webp' },
-  { id: 'leather', name: 'Leather Badges', image: 'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/6.webp' },
-  { id: 'sublimation', name: 'Sublimated Badges', image: 'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/7.webp' },
-  { id: 'other', name: 'Other Type', image: 'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/8.webp' },
+  { id: 'embroidered', name: 'Embroidered Patches', image: '/4 (1).webp' },
+  { id: 'chenille', name: 'Chenille Badges', image: '/2.webp'  },
+  { id: 'pvc', name: 'PVC / Rubber Badges', image: '/3.webp'  },
+  { id: '3d-puff', name: '3D Puff Embroidery', image:'/4 (2).webp'},
+  { id: 'woven', name: 'Woven Badges', image: '/5.webp'},
+  { id: 'leather', name: 'Leather Badges', image: '/6.webp' },
+  { id: 'sublimation', name: 'Sublimated Badges', image: '/7.webp'},
+  { id: 'other', name: 'Other Type', image: '/8.webp' },
 ];
 
 const coverageOptions = [
@@ -42,6 +42,17 @@ const threadTypes = [
   { id: 'metallic', name: 'Metallic' },
   { id: 'madeira', name: 'Madeira' },
 ];
+
+const imageUrls = [
+'4 (1).webp',
+'4 (2).webp',
+'5.webp' ,
+'2.webp',
+'3.webp',
+'8.webp',
+'6.webp',
+'7.webp',
+]
 
 export default function FreeInstantQuote() {
   const [isSubmitting, setIsSubmitting] = useState(false);

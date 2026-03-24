@@ -101,7 +101,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="https://www.bespokepatches.co.uk/frontend/images/sample/embroidered-patches/4.webp"
+                  src="/4 (1).webp"
                   alt="Our craftsmanship"
                   width={300}
                   height={300}
@@ -110,7 +110,7 @@ export default function AboutPage() {
               </div>
               <div className="rounded-2xl overflow-hidden shadow-lg mt-8">
                 <Image
-                  src="https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/2.webp"
+                  src="/2.webp"
                   alt="Quality patches"
                   width={300}
                   height={300}
@@ -119,7 +119,7 @@ export default function AboutPage() {
               </div>
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/3.webp"
+                  src="/3.webp"
                   alt="Custom designs"
                   width={300}
                   height={300}
@@ -128,7 +128,7 @@ export default function AboutPage() {
               </div>
               <div className="rounded-2xl overflow-hidden shadow-lg mt-8">
                 <Image
-                  src="https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/4.webp"
+                  src="/5.webp"
                   alt="Attention to detail"
                   width={300}
                   height={300}

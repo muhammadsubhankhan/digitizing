@@ -46,10 +46,10 @@ const steps = [
 ];
 
 const images = [
-  'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/5.webp',
-  'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/6.webp',
-  'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/7.webp',
-  'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/8.webp',
+  '/5.webp',
+  '/6.webp',
+  '/7.webp',
+  '/8.webp',
 ];
 
 export default function ProcessSteps() {

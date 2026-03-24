@@ -1,11 +1,11 @@
 import ImageCarousel from './ImageCarousel';
 
 const carouselImages = [
-  'https://www.bespokepatches.co.uk/frontend/images/sample/embroidered-patches/4.webp',
-  'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/2.webp',
-  'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/3.webp',
-  'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/4.webp',
-  'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/5.webp',
+  '/7.webp',
+  '/5.webp',
+  '/4 (2).webp',
+  '/3.webp',
+  '/2.webp',
 ];
 
 export default function Description() {
