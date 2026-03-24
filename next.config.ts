@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
         pathname: '/frontend/images/**',
       },
     ],
-    unoptimized: true,
+    
   },
 };
 
