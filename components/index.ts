@@ -1,0 +1,11 @@
+export { default as Header } from './Header';
+export { default as Footer } from './Footer';
+export { default as Hero } from './Hero';
+export { default as Description } from './Description';
+export { default as ProcessSteps } from './ProcessSteps';
+export { default as Creations } from './Creations';
+export { default as Reviews } from './Reviews';
+export { default as Stats } from './Stats';
+export { default as FAQ } from './FAQ';
+export { default as ImageCarousel } from './ImageCarousel';
+export { default as CustomPatchHouseLogo } from './CustomPatchHouseLogo';
