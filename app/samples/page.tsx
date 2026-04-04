@@ -5,91 +5,78 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 
 const categories = [
-  { id: 'embroidered-patches', name: 'Embroidered Patches', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/embroidered-patches/4.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/2.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/3.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/4.webp',
-  ]},
-  { id: 'biker-patches', name: 'Biker Patches', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/2.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/3.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/4.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/5.webp',
-  ]},
-  { id: 'cotton-patches', name: 'Cotton Patches', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/6.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/7.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/8.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/embroidered-patches/4.webp',
-  ]},
-  { id: 'iron-patches', name: 'Iron Patches', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/3.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/5.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/7.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/2.webp',
-  ]},
-  { id: 'military-patches', name: 'Military Patches', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/4.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/6.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/8.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/embroidered-patches/4.webp',
-  ]},
-  { id: 'morale-patches', name: 'Morale Patches', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/5.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/7.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/2.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/4.webp',
-  ]},
-  { id: 'velcro-patches', name: 'Velcro Patches', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/6.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/8.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/embroidered-patches/4.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/3.webp',
-  ]},
-  { id: 'sew-on-patches', name: 'Sew On Patches', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/7.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/2.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/5.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/6.webp',
-  ]},
-  { id: 'back-patches', name: 'Back Patches', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/8.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/embroidered-patches/4.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/4.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/7.webp',
-  ]},
-  { id: 'jacket-patches', name: 'Jacket Patches', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/2.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/6.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/3.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/8.webp',
-  ]},
-  { id: 'logo-patches', name: 'Logo Patches', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/embroidered-patches/4.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/5.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/2.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/4.webp',
-  ]},
-  { id: 'pvc-rubber-patches', name: 'PVC Rubber Patches', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/3.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/7.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/6.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/embroidered-patches/4.webp',
-  ]},
-  { id: 'custom-chenille-patches', name: 'Custom Chenille Patches', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/4.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/8.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/5.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/3.webp',
-  ]},
-  { id: 'custom-caps-hats', name: 'Custom Caps Hats', images: [
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/5.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/2.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/7.webp',
-    'https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/4.webp',
-  ]},
+  {
+    id: 'embroidered-patches',
+    name: 'Embroidered Patches',
+    images: ['/2.webp', '/3.webp', '/4 (1).webp', '/4 (2).webp'],
+  },
+  {
+    id: 'biker-patches',
+    name: 'Biker Patches',
+    images: ['/3.webp', '/4 (1).webp', '/4 (2).webp', '/5.webp'],
+  },
+  {
+    id: 'cotton-patches',
+    name: 'Cotton Patches',
+    images: ['/6.webp', '/7.webp', '/8.webp', '/2.webp'],
+  },
+  {
+    id: 'iron-patches',
+    name: 'Iron Patches',
+    images: ['/4 (1).webp', '/5.webp', '/7.webp', '/3.webp'],
+  },
+  {
+    id: 'military-patches',
+    name: 'Military Patches',
+    images: ['/4 (2).webp', '/6.webp', '/8.webp', '/2.webp'],
+  },
+  {
+    id: 'morale-patches',
+    name: 'Morale Patches',
+    images: ['/5.webp', '/7.webp', '/3.webp', '/4 (1).webp'],
+  },
+  {
+    id: 'velcro-patches',
+    name: 'Velcro Patches',
+    images: ['/6.webp', '/8.webp', '/2.webp', '/4 (2).webp'],
+  },
+  {
+    id: 'sew-on-patches',
+    name: 'Sew On Patches',
+    images: ['/7.webp', '/3.webp', '/5.webp', '/6.webp'],
+  },
+  {
+    id: 'back-patches',
+    name: 'Back Patches',
+    images: ['/8.webp', '/2.webp', '/4 (1).webp', '/7.webp'],
+  },
+  {
+    id: 'jacket-patches',
+    name: 'Jacket Patches',
+    images: ['/3.webp', '/6.webp', '/4 (2).webp', '/8.webp'],
+  },
+  {
+    id: 'logo-patches',
+    name: 'Logo Patches',
+    images: ['/2.webp', '/5.webp', '/3.webp', '/4 (1).webp'],
+  },
+  {
+    id: 'pvc-rubber-patches',
+    name: 'PVC Rubber Patches',
+    images: ['/4 (2).webp', '/7.webp', '/6.webp', '/2.webp'],
+  },
+  {
+    id: 'custom-chenille-patches',
+    name: 'Custom Chenille Patches',
+    images: ['/4 (1).webp', '/8.webp', '/5.webp', '/3.webp'],
+  },
+  {
+    id: 'custom-caps-hats',
+    name: 'Custom Caps Hats',
+    images: ['/5.webp', '/3.webp', '/7.webp', '/4 (2).webp'],
+  },
 ];
+
 
 const stats = [
   { value: '50,000+', label: 'Patches Delivered' },
@@ -145,7 +132,7 @@ export default function SamplesPage() {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(selectedCategory === category.id ? null : category.id)}
-                className={`p-4 rounded-xl text-center transition-all ${
+                className={`p-4 rounded-xl text-center transition-all cursor-pointer ${
                   selectedCategory === category.id
                     ? 'bg-[#e63946] text-white shadow-lg'
                     : 'bg-white text-[#1d3557] hover:shadow-lg border border-gray-200'

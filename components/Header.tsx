@@ -72,10 +72,10 @@ export default function Header() {
             {/* Services Dropdown */}
             <div
               className="relative group"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
+             
+              
             >
-              <button className="flex items-center gap-1 text-gray-700 hover:text-[#e63946] font-medium transition-colors">
+              <button  onMouseEnter={() => setIsServicesOpen(true)} onMouseLeave={() => setIsServicesOpen(false)} className="flex items-center gap-1 text-gray-700 hover:text-[#e63946] font-medium transition-colors">
                 Services
                 <svg className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -83,7 +83,7 @@ export default function Header() {
               </button>
 
               {isServicesOpen && (
-                <div className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg py-2 mt-1 max-h-96 overflow-y-auto">
+                <div onMouseEnter={() => setIsServicesOpen(true)} onMouseLeave={() => setIsServicesOpen(false)} className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg py-2 mt-1 max-h-96 overflow-y-auto">
                   {services.map((service) => (
                     <Link
                       key={service.slug}
