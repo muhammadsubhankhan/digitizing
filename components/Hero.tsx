@@ -79,35 +79,6 @@ export default function Hero() {
                     />
                   </div>
                 ))}
-                {/* <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform">
-                  <Image
-                    src="https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/2.webp"
-                    alt="Biker Patch"
-                    width={300}
-                    height={300}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              </div>
-              <div className="space-y-4 pt-8">
-                <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform">
-                  <Image
-                    src="https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/3.webp"
-                    alt="Custom Patch Design"
-                    width={300}
-                    height={300}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-                <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform">
-                  <Image
-                    src="https://www.bespokepatches.co.uk/frontend/images/sample/biker-patches/4.webp"
-                    alt="Embroidered Badge"
-                    width={300}
-                    height={300}
-                    className="w-full h-auto object-cover"
-                  />
-                </div> */}
            
             </div>
           </div>

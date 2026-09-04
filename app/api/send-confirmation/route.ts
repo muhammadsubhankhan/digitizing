@@ -58,7 +58,7 @@ export async function POST(req: Request) {
     } = body;
 
     const { error } = await resend.emails.send({
-      from: 'orders@yourdomain.com',   // ← replace with your verified domain email
+      from: process.env.RESEND_FROM_EMAIL ?? 'onboarding@resend.dev',
       to: email,                        // sends to actual customer
       subject: '✅ Quote Request Received – We\'ll Be In Touch Soon!',
       html: `

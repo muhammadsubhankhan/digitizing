@@ -1,36 +1,34 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { serviceList } from '@/lib/services';
+import { breadcrumbSchema, itemListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Our Services',
+  title: 'Custom Patch Services | Embroidered, PVC, Woven & More',
   description: 'Explore our complete range of custom patch services including embroidered patches, biker patches, military patches, PVC patches, and more.',
+  alternates: { canonical: '/services' },
+  openGraph: { url: '/services', title: 'Custom Patch Services' },
 };
-
-const services = [
-  { slug: 'back-patches', name: 'Back Patches', image: '/2.webp', description: 'Large, eye-catching patches for jackets and vests' },
-  { slug: 'biker-patches', name: 'Biker Patches', image: '/3.webp', description: 'Rugged patches for motorcycle enthusiasts' },
-  { slug: 'cotton-patches', name: 'Cotton Patches', image: '/4 (1).webp', description: 'Soft and comfortable cotton material patches' },
-  { slug: 'embroidered-patches', name: 'Embroidered Patches', image: '/4 (2).webp', description: 'Classic embroidered patches with intricate designs' },
-  { slug: 'iron-patches', name: 'Iron Patches', image: '/5.webp', description: 'Easy to apply iron-on patches' },
-  { slug: 'jacket-patches', name: 'Jacket Patches', image: '/6.webp', description: 'Custom patches for jackets and outerwear' },
-  { slug: 'military-patches', name: 'Military Patches', image: '/7.webp', description: 'Authentic military-style patches' },
-  { slug: 'morale-patches', name: 'Morale Patches', image: '/8.webp', description: 'Fun patches to boost team spirit' },
-  { slug: 'custom-keychain', name: 'Custom Keychain', image: '/2.webp', description: 'Unique embroidered keychains' },
-  { slug: 'sew-on-patches', name: 'Sew On Patches', image: '/3.webp', description: 'Traditional sew-on patches' },
-  { slug: 'velcro-patches', name: 'Velcro Patches', image: '/4 (1).webp', description: 'Interchangeable velcro patches' },
-  { slug: 'airsoft-patches', name: 'Airsoft Patches', image: '/4 (2).webp', description: 'Tactical patches for airsoft teams' },
-  { slug: 'woven-labels', name: 'Woven Labels', image: '/5.webp', description: 'Fine-detailed woven labels' },
-  { slug: 'pvc-rubber-patches', name: 'PVC Rubber Patches', image: '/6.webp', description: 'Durable waterproof rubber patches' },
-  { slug: 'logo-patches', name: 'Logo Patches', image: '/7.webp', description: 'Custom logo patches for brands' },
-  { slug: 'custom-caps-hats', name: 'Custom Caps Hats', image: '/8.webp', description: 'Custom embroidered caps and hats' },
-  { slug: 'custom-chenille-patches', name: 'Custom Chenille Patches', image: '/2.webp', description: 'Soft fuzzy chenille patches' },
-  { slug: 'police-patches', name: 'Police Patches', image: '/3.webp', description: 'Professional law enforcement patches' },
-];
 
 export default function ServicesPage() {
   return (
     <div>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+        ])}
+      />
+      <JsonLd
+        data={itemListSchema(
+          serviceList.map((service) => ({
+            name: service.name,
+            path: `/services/${service.slug}`,
+          }))
+        )}
+      />
       {/* Hero Section */}
       <section className="gradient-bg py-16 lg:py-24">
         <div className="container mx-auto px-4">
@@ -50,7 +48,7 @@ export default function ServicesPage() {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
+            {serviceList.map((service) => (
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header, Footer } from "@/components";
+import JsonLd from "@/components/JsonLd";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,9 +12,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Custom Embroidered Patches | Premium Quality Custom Patches",
-    template: "%s | Custom Patch House",
+    template: `%s | ${SITE_NAME}`,
   },
   description: "Get eye-popping embroidered custom patches for every industry. Premium quality, fast delivery, affordable prices. Order custom patches for businesses, teams, and personal projects.",
   keywords: ["custom patches", "embroidered patches", "custom embroidery", "biker patches", "military patches", "iron on patches", "velcro patches", "custom badges"],
@@ -26,8 +33,9 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   openGraph: {
     type: "website",
+    url: "/",
     locale: "en_US",
-    siteName: "Custom Patch House",
+    siteName: SITE_NAME,
     title: "Custom Embroidered Patches | Premium Quality",
     description: "Get eye-popping embroidered custom patches for every industry. Premium quality, fast delivery, affordable prices.",
     images: [{ url: "/og-image-1200x630.png", width: 1200, height: 630 }],
@@ -41,6 +49,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -52,6 +67,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
+        <JsonLd data={organizationSchema} />
+        <JsonLd data={websiteSchema} />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Learn about Embroidered Patches - delivering high-quality custom embroidered patches since 2010. Our commitment to quality and customer satisfaction.',
+  title: 'About Custom Patch House | Custom Patch Makers Since 2010',
+  description: 'Learn about Custom Patch House - delivering high-quality custom embroidered patches since 2010. Our commitment to quality and customer satisfaction.',
+  alternates: { canonical: '/about' },
+  openGraph: { url: '/about', title: 'About Custom Patch House' },
 };
 
 const values = [
@@ -56,6 +60,12 @@ const team = [
 export default function AboutPage() {
   return (
     <div>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'About', path: '/about' },
+        ])}
+      />
       {/* Hero Section */}
       <section className="gradient-bg py-16 lg:py-24">
         <div className="container mx-auto px-4">
