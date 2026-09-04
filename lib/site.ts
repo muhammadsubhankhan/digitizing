@@ -4,7 +4,7 @@
  * to your live domain — the fallback below is only for local development.
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.custompatchhouse.com'
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://custompatchhouse.com'
 ).replace(/\/$/, '');
 
 if (SITE_URL.includes('example.com')) {
