@@ -49,6 +49,13 @@ export default function Header() {
             >
               About Us
             </Link>
+            <Link
+              href="/blog"
+              className={`font-medium transition-colors ${pathname?.startsWith('/blog') ? 'text-[#e63946]' : 'text-gray-700 hover:text-[#e63946]'
+                }`}
+            >
+              Blog
+            </Link>
 
             {/* Services Dropdown */}
             <div
@@ -126,6 +133,9 @@ export default function Header() {
               </Link>
               <Link href="/about" className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">
                 About Us
+              </Link>
+              <Link href="/blog" className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">
+                Blog
               </Link>
 
               {/* Mobile Services Dropdown */}

@@ -1,6 +1,7 @@
 import { SITE_NAME, SITE_URL, CONTACT, SOCIAL_PROFILES, absoluteUrl } from './site';
 import { faqs } from './faqs';
 import type { Service } from './services';
+import type { Post } from './posts';
 
 export const organizationSchema = {
   '@context': 'https://schema.org',
@@ -92,6 +93,22 @@ export function serviceSchema(slug: string, service: Service) {
       availability: 'https://schema.org/InStock',
       url: absoluteUrl('/free-instant-quote'),
     },
+  };
+}
+
+export function articleSchema(post: Post) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt || undefined,
+    url: absoluteUrl(`/blog/${post.slug}`),
+    mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(`/blog/${post.slug}`) },
+    image: post.coverImage ? absoluteUrl(post.coverImage) : undefined,
+    datePublished: post.createdAt,
+    dateModified: post.updatedAt,
+    author: { '@type': 'Organization', name: post.author, url: SITE_URL },
+    publisher: { '@id': `${SITE_URL}/#organization` },
   };
 }
 

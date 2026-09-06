@@ -7,6 +7,7 @@ const quickLinks = [
   { name: 'About Us', href: '/about' },
   { name: 'Samples', href: '/samples' },
   { name: 'All Services', href: '/services' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Contact Us', href: '/contact' },
   { name: 'Free Quote', href: '/free-instant-quote' },
 ];
