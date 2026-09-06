@@ -4,30 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { serviceList as services } from '@/lib/services';
 
 
 
 
-const services = [
-  { name: 'Back Patches', slug: 'back-patches' },
-  { name: 'Biker Patches', slug: 'biker-patches' },
-  { name: 'Cotton Patches', slug: 'cotton-patches' },
-  { name: 'Embroidered Patches', slug: 'embroidered-patches' },
-  { name: 'Iron Patches', slug: 'iron-patches' },
-  { name: 'Jacket Patches', slug: 'jacket-patches' },
-  { name: 'Military Patches', slug: 'military-patches' },
-  { name: 'Morale Patches', slug: 'morale-patches' },
-  { name: 'Custom Keychain', slug: 'custom-keychain' },
-  { name: 'Sew On Patches', slug: 'sew-on-patches' },
-  { name: 'Velcro Patches', slug: 'velcro-patches' },
-  { name: 'Airsoft Patches', slug: 'airsoft-patches' },
-  { name: 'Woven Labels', slug: 'woven-labels' },
-  { name: 'PVC Rubber Patches', slug: 'pvc-rubber-patches' },
-  { name: 'Logo Patches', slug: 'logo-patches' },
-  { name: 'Custom Caps Hats', slug: 'custom-caps-hats' },
-  { name: 'Custom Chenille Patches', slug: 'custom-chenille-patches' },
-  { name: 'Police Patches', slug: 'police-patches' },
-];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

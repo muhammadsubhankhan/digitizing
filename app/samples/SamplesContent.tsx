@@ -86,6 +86,7 @@ const stats = [
 
 export default function SamplesContent() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const activeCategory = categories.find((c) => c.id === selectedCategory);
 
   return (
     <div>
@@ -152,19 +153,20 @@ export default function SamplesContent() {
           </div>
 
           {/* Selected Category Images */}
-          {selectedCategory && (
+          {activeCategory && (
             <div className="mt-12 animate-fadeInUp">
               <h3 className="text-2xl font-bold text-[#1d3557] mb-6 text-center">
-                {categories.find(c => c.id === selectedCategory)?.name} Samples
+                {activeCategory.name} Samples
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {categories.find(c => c.id === selectedCategory)?.images.map((image, index) => (
+                {activeCategory.images.map((image, index) => (
                   <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg">
                     <div className="aspect-square relative">
                       <Image
                         src={image}
-                        alt={`Sample ${index + 1}`}
+                        alt={`Custom ${activeCategory.name.toLowerCase()} — sample ${index + 1}`}
                         fill
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

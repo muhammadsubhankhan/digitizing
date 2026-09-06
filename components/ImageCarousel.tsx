@@ -5,11 +5,18 @@ import { useState, useEffect } from 'react';
 
 interface ImageCarouselProps {
   images: string[];
+  /** Describes what the carousel is showing, e.g. "Custom biker patch". */
+  label?: string;
   autoPlay?: boolean;
   interval?: number;
 }
 
-export default function ImageCarousel({ images, autoPlay = true, interval = 3000 }: ImageCarouselProps) {
+export default function ImageCarousel({
+  images,
+  label = 'Custom patch',
+  autoPlay = true,
+  interval = 3000,
+}: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -36,8 +43,9 @@ export default function ImageCarousel({ images, autoPlay = true, interval = 3000
       <div className="relative aspect-square">
         <Image
           src={images[currentIndex]}
-          alt={`Slide ${currentIndex + 1}`}
+          alt={`${label} — photo ${currentIndex + 1} of ${images.length}`}
           fill
+          sizes="(max-width: 1024px) 100vw, 600px"
           className="object-cover transition-opacity duration-500"
         />
       </div>

@@ -1,22 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { serviceList } from '@/lib/services';
 
 const quickLinks = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
   { name: 'Samples', href: '/samples' },
+  { name: 'All Services', href: '/services' },
   { name: 'Contact Us', href: '/contact' },
   { name: 'Free Quote', href: '/free-instant-quote' },
 ];
 
-const services = [
-  { name: 'Embroidered Patches', href: '/services/embroidered-patches' },
-  { name: 'Biker Patches', href: '/services/biker-patches' },
-  { name: 'Military Patches', href: '/services/military-patches' },
-  { name: 'Custom Chenille Patches', href: '/services/custom-chenille-patches' },
-  { name: 'PVC Rubber Patches', href: '/services/pvc-rubber-patches' },
-  { name: 'Velcro Patches', href: '/services/velcro-patches' },
-];
 
 export default function Footer() {
   return (
@@ -75,10 +69,13 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service.href}>
-                  <Link href={service.href} className="text-gray-300 hover:text-[#e63946] transition-colors">
+            <ul className="space-y-2 columns-2 gap-4 text-sm">
+              {serviceList.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="text-gray-300 hover:text-[#e63946] transition-colors"
+                  >
                     {service.name}
                   </Link>
                 </li>

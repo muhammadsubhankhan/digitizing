@@ -4,14 +4,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Hero() {
-  const imageUrl = [
-    '/5.webp',
-    '/4 (2).webp',
-    '/3.webp',
-    '/2.webp'
-
-
-  ]
+  const heroImages = [
+    { src: '/5.webp', alt: 'Iron-on embroidered patch with detailed lettering' },
+    { src: '/4 (2).webp', alt: 'Fully embroidered custom patch with vibrant thread colours' },
+    { src: '/3.webp', alt: 'Custom biker patch stitched for a motorcycle club vest' },
+    { src: '/2.webp', alt: 'Large embroidered back patch with a merrowed border' },
+  ];
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#1d3557] via-[#457b9d] to-[#1d3557] py-10">
       {/* Background Pattern */}
@@ -65,16 +63,19 @@ export default function Hero() {
           <div className="relative py-4!">
             <div className="grid grid-cols-2 gap-4">
              
-                {imageUrl.map((image, index) => (
+                {heroImages.map((image, index) => (
                   <div
-                    key={image || index}
+                    key={image.src}
                     className="rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105"
                   >
                     <Image
-                      src={image}
-                      alt="Custom Embroidered Patch"
+                      src={image.src}
+                      alt={image.alt}
                       width={300}
                       height={300}
+                      sizes="(max-width: 1024px) 50vw, 300px"
+                      priority={index === 0}
+                      loading={index === 0 ? 'eager' : 'lazy'}
                       className="w-full h-[250px] object-cover"
                     />
                   </div>

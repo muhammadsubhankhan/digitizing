@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
 import { services, serviceSlugs, serviceTitle } from '@/lib/services';
-import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
+import { breadcrumbSchema, serviceSchema, faqPageSchema } from '@/lib/schema';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -56,6 +56,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <div>
       <JsonLd data={serviceSchema(slug, service)} />
+      <JsonLd data={faqPageSchema(service.faqs)} />
       <JsonLd
         data={breadcrumbSchema([
           { name: 'Home', path: '/' },
@@ -84,7 +85,7 @@ export default async function ServicePage({ params }: Props) {
             {/* Description */}
             <div>
               <h2 className="text-3xl font-bold text-[#1d3557] mb-6">
-                About {service.name}
+                About {serviceTitle(service.name)}
               </h2>
               <p className="text-gray-600 text-lg mb-8">
                 {service.longDescription}
@@ -123,6 +124,82 @@ export default async function ServicePage({ params }: Props) {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* In-depth content */}
+      <section className="pb-16 lg:pb-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl">
+            {service.sections.map((section) => (
+              <div key={section.heading} className="mb-10">
+                <h2 className="text-2xl lg:text-3xl font-bold text-[#1d3557] mb-4">
+                  {section.heading}
+                </h2>
+                <p className="text-gray-600 text-lg leading-relaxed">{section.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 mt-4">
+            {/* Who orders this */}
+            <div>
+              <h2 className="text-2xl lg:text-3xl font-bold text-[#1d3557] mb-6">
+                Who orders {service.name.toLowerCase()}
+              </h2>
+              <ul className="space-y-3">
+                {service.useCases.map((useCase) => (
+                  <li key={useCase} className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-[#e63946] flex-shrink-0" />
+                    <span className="text-gray-700 text-lg">{useCase}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Specifications */}
+            <div>
+              <h2 className="text-2xl lg:text-3xl font-bold text-[#1d3557] mb-6">
+                {serviceTitle(service.name)} specifications
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <tbody>
+                    {service.specs.map((spec) => (
+                      <tr key={spec.label} className="border-b border-gray-200">
+                        <th
+                          scope="row"
+                          className="py-3 pr-4 align-top font-semibold text-[#1d3557] whitespace-nowrap"
+                        >
+                          {spec.label}
+                        </th>
+                        <td className="py-3 text-gray-700">{spec.value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Page-specific FAQ */}
+      <section className="py-16 lg:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#1d3557] mb-8">
+              {serviceTitle(service.name)} — frequently asked questions
+            </h2>
+            <dl className="space-y-8">
+              {service.faqs.map((faq) => (
+                <div key={faq.question}>
+                  <dt className="text-xl font-semibold text-[#1d3557] mb-3">{faq.question}</dt>
+                  <dd className="text-gray-600 text-lg leading-relaxed">{faq.answer}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </section>

@@ -225,7 +225,7 @@ const [submitted, setSubmitted] = useState(false);
                     <div className="w-full aspect-square rounded-xl overflow-hidden mb-3">
                       <Image
                         src={type.image}
-                        alt={type.name}
+                        alt={`${type.name} — custom patch option`}
                         width={150}
                         height={150}
                         className="w-full h-full object-cover"

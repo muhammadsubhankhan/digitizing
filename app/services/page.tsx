@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
-import { serviceList } from '@/lib/services';
+import { serviceList, serviceTitle } from '@/lib/services';
 import { breadcrumbSchema, itemListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
@@ -57,8 +57,9 @@ export default function ServicesPage() {
                 <div className="aspect-video relative overflow-hidden">
                   <Image
                     src={service.image}
-                    alt={service.name}
+                    alt={`${serviceTitle(service.name)} made by Custom Patch House`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
