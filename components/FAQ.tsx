@@ -30,7 +30,7 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`mb-4 rounded-2xl overflow-hidden transition-all duration-300 ${
+              className={`mb-4 rounded-2xl overflow-hidden transition-[background-color,box-shadow] duration-500 ease-out ${
                 openIndex === index
                   ? 'bg-[#1d3557] shadow-xl'
                   : 'bg-[#f8f9fa] hover:bg-gray-100'
@@ -38,12 +38,13 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className={`w-full px-6 py-5 text-left flex items-center justify-between gap-4 transition-colors ${
+                aria-expanded={openIndex === index}
+                className={`w-full px-6 py-5 text-left flex items-center justify-between gap-4 transition-colors duration-500 ease-out ${
                   openIndex === index ? 'text-white' : 'text-[#1d3557]'
                 }`}
               >
                 <div className="flex items-center gap-4">
-                  <span className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm ${
+                  <span className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm transition-colors duration-500 ease-out ${
                     openIndex === index
                       ? 'bg-[#e63946] text-white'
                       : 'bg-[#1d3557]/10 text-[#1d3557]'
@@ -52,13 +53,13 @@ export default function FAQ() {
                   </span>
                   <span className="font-semibold text-lg">{faq.question}</span>
                 </div>
-                <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ease-out ${
                   openIndex === index
                     ? 'bg-white/20 rotate-180'
                     : 'bg-[#e63946]/10'
                 }`}>
                   <svg
-                    className={`w-5 h-5 transition-colors ${
+                    className={`w-5 h-5 transition-colors duration-500 ease-out ${
                       openIndex === index ? 'text-white' : 'text-[#e63946]'
                     }`}
                     fill="none"
@@ -70,12 +71,16 @@ export default function FAQ() {
                 </div>
               </button>
               <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'max-h-96' : 'max-h-0'
+                className={`grid transition-[grid-template-rows,opacity] duration-500 ease-out motion-reduce:transition-none ${
+                  openIndex === index
+                    ? 'grid-rows-[1fr] opacity-100'
+                    : 'grid-rows-[0fr] opacity-0'
                 }`}
               >
-                <div className="px-6 pb-6 pt-2 text-gray-300 leading-relaxed ml-14">
-                  {faq.answer}
+                <div className="overflow-hidden min-h-0">
+                  <div className="px-6 pb-6 pt-2 text-gray-300 leading-relaxed ml-14">
+                    {faq.answer}
+                  </div>
                 </div>
               </div>
             </div>

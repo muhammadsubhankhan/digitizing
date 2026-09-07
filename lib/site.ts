@@ -18,9 +18,11 @@ if (SITE_URL.includes('example.com')) {
 export const SITE_NAME = 'Custom Patch House';
 
 export const CONTACT = {
-  email: 'info@embroideredpatches.com',
-  phone: '+1 (555) 123-4567',
-  phoneHref: '+15551234567',
+  email: 'info@custompatchhouse.com',
+  phone: '+1 (972) 447-7381',
+  phoneHref: '+19724477381',
+  /** wa.me expects digits only, no leading + or spaces. */
+  whatsapp: '19724477381',
 };
 
 export const SOCIAL_PROFILES = [

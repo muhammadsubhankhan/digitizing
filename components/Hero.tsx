@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { CONTACT } from '@/lib/site';
 
 export default function Hero() {
   const heroImages = [
@@ -46,7 +47,7 @@ export default function Hero() {
                 Request a Call Back
               </button>
               <a
-                href="https://wa.me/15551234567"
+                href={`https://wa.me/${CONTACT.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-14 h-14 bg-[#25d366] rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
@@ -88,7 +89,7 @@ export default function Hero() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/15551234567"
+        href={`https://wa.me/${CONTACT.whatsapp}`}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"

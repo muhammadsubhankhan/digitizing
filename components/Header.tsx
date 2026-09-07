@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { serviceList as services } from '@/lib/services';
 
@@ -14,6 +14,22 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const pathname = usePathname();
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openServices = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setIsServicesOpen(true);
+  };
+
+  const closeServices = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setIsServicesOpen(false), 150);
+  };
+
+  useEffect(() => () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="container mx-auto px-4">
@@ -59,11 +75,17 @@ export default function Header() {
 
             {/* Services Dropdown */}
             <div
-              className="relative group"
-             
-              
+              className="relative"
+              onMouseEnter={openServices}
+              onMouseLeave={closeServices}
             >
-              <button  onMouseEnter={() => setIsServicesOpen(true)} onMouseLeave={() => setIsServicesOpen(false)} className="flex items-center gap-1 text-gray-700 hover:text-[#e63946] font-medium transition-colors">
+              <button
+                type="button"
+                aria-expanded={isServicesOpen}
+                aria-haspopup="true"
+                onClick={() => setIsServicesOpen((open) => !open)}
+                className="flex items-center gap-1 text-gray-700 hover:text-[#e63946] font-medium transition-colors"
+              >
                 Services
                 <svg className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -71,16 +93,19 @@ export default function Header() {
               </button>
 
               {isServicesOpen && (
-                <div onMouseEnter={() => setIsServicesOpen(true)} onMouseLeave={() => setIsServicesOpen(false)} className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg py-2 mt-1 max-h-96 overflow-y-auto">
-                  {services.map((service) => (
-                    <Link
-                      key={service.slug}
-                      href={`/services/${service.slug}`}
-                      className="block px-4 py-2 text-gray-700 hover:bg-[#e63946] hover:text-white transition-colors"
-                    >
-                      {service.name}
-                    </Link>
-                  ))}
+                <div className="absolute top-full left-0 pt-2 w-64">
+                  <div className="bg-white shadow-xl rounded-lg py-2 max-h-96 overflow-y-auto">
+                    {services.map((service) => (
+                      <Link
+                        key={service.slug}
+                        href={`/services/${service.slug}`}
+                        onClick={() => setIsServicesOpen(false)}
+                        className="block px-4 py-2 text-gray-700 hover:bg-[#e63946] hover:text-white transition-colors"
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
