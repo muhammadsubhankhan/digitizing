@@ -9,3 +9,4 @@ export { default as Stats } from './Stats';
 export { default as FAQ } from './FAQ';
 export { default as ImageCarousel } from './ImageCarousel';
 export { default as CustomPatchHouseLogo } from './CustomPatchHouseLogo';
+export { default as WhatsAppFloat } from './WhatsAppFloat';
