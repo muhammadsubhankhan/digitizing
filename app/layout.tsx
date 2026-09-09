@@ -46,6 +46,9 @@ export const metadata: Metadata = {
     description: "Get eye-popping embroidered custom patches for every industry.",
     images: ["/og-image-1200x630.png"],
   },
+  verification: {
+    google: "Q-ZfpMo_hL2MamzOvO3qAubzPkVzKlkF_6qe31P2n3w",
+  },
   robots: {
     index: true,
     follow: true,
