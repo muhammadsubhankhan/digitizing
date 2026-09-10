@@ -1,9 +1,25 @@
 'use client';
 
 import { useState } from 'react';
-import { faqs } from '@/lib/faqs';
+import { faqs, type Faq } from '@/lib/faqs';
 
-export default function FAQ() {
+type Props = {
+  /** Defaults to the site-wide FAQs used on the home page. */
+  items?: Faq[];
+  eyebrow?: string;
+  heading?: string;
+  subheading?: string;
+  /** The "Still have questions?" block. Off on pages that already end in a CTA. */
+  showCta?: boolean;
+};
+
+export default function FAQ({
+  items = faqs,
+  eyebrow = 'FAQ',
+  heading = 'We Know Your Confusions',
+  subheading = 'Find answers to frequently asked questions about our custom patch services',
+  showCta = true,
+}: Props = {}) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
@@ -16,18 +32,18 @@ export default function FAQ() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-5 py-2 bg-[#e63946]/10 text-[#e63946] rounded-full text-sm font-bold tracking-wide mb-5">
-            FAQ
+            {eyebrow}
           </span>
           <h2 className="text-3xl lg:text-5xl font-bold text-[#1d3557] mb-5">
-            We Know Your Confusions
+            {heading}
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Find answers to frequently asked questions about our custom patch services
+            {subheading}
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          {faqs.map((faq, index) => (
+          {items.map((faq, index) => (
             <div
               key={index}
               className={`mb-4 rounded-2xl overflow-hidden transition-[background-color,box-shadow] duration-500 ease-out ${
@@ -88,6 +104,7 @@ export default function FAQ() {
         </div>
 
         {/* CTA */}
+        {showCta && (
         <div className="text-center mt-16">
           <p className="text-gray-600 mb-4">Still have questions?</p>
           <a
@@ -100,6 +117,7 @@ export default function FAQ() {
             </svg>
           </a>
         </div>
+        )}
       </div>
     </section>
   );

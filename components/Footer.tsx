@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { serviceList } from '@/lib/services';
+import { industryList } from '@/lib/industries';
 import { CONTACT } from '@/lib/site';
 
 const quickLinks = [
@@ -8,6 +9,7 @@ const quickLinks = [
   { name: 'About Us', href: '/about' },
   { name: 'Samples', href: '/samples' },
   { name: 'All Services', href: '/services' },
+  { name: 'Pricing', href: '/pricing' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact Us', href: '/contact' },
   { name: 'Free Quote', href: '/free-instant-quote' },
@@ -112,9 +114,38 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Who we work with — audience landing pages */}
+        <div className="border-t border-white/20 mt-12 pt-8">
+          <h3 className="text-lg font-semibold mb-4">Who We Work With</h3>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            {industryList.map((industry) => (
+              <li key={industry.slug}>
+                <Link
+                  href={`/${industry.slug}`}
+                  className="text-gray-300 hover:text-[#e63946] transition-colors"
+                >
+                  {industry.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="border-t border-white/20 mt-12 pt-8 text-center text-gray-400">
+        <div className="border-t border-white/20 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-400">
           <p>&copy; {new Date().getFullYear()} Custom Patch House. All rights reserved.</p>
+          <ul className="flex gap-6 text-sm">
+            <li>
+              <Link href="/terms" className="hover:text-[#e63946] transition-colors">
+                Terms &amp; Conditions
+              </Link>
+            </li>
+            <li>
+              <Link href="/privacy" className="hover:text-[#e63946] transition-colors">
+                Privacy Policy
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>

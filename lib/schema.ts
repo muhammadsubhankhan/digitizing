@@ -2,6 +2,7 @@ import { SITE_NAME, SITE_URL, CONTACT, SOCIAL_PROFILES, absoluteUrl } from './si
 import { faqs } from './faqs';
 import type { Service } from './services';
 import type { Post } from './posts';
+import type { Industry } from './industries';
 
 export const organizationSchema = {
   '@context': 'https://schema.org',
@@ -87,6 +88,27 @@ export function serviceSchema(slug: string, service: Service) {
     image: service.images.map((image) => absoluteUrl(image)),
     serviceType: service.name,
     areaServed: 'Worldwide',
+    provider: { '@id': `${SITE_URL}/#organization` },
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      url: absoluteUrl('/free-instant-quote'),
+    },
+  };
+}
+
+/** Audience landing pages describe the same service scoped to a buyer group. */
+export function serviceAudienceSchema(industry: Industry) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: industry.name,
+    description: industry.description,
+    url: absoluteUrl(`/${industry.slug}`),
+    image: industry.images.map((image) => absoluteUrl(image)),
+    serviceType: 'Custom patch manufacturing',
+    areaServed: 'Worldwide',
+    audience: { '@type': 'Audience', audienceType: industry.name },
     provider: { '@id': `${SITE_URL}/#organization` },
     offers: {
       '@type': 'Offer',

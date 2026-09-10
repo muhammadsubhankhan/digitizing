@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const patchTypes = [
   { id: 'embroidered', name: 'Embroidered Patches', image: '/4 (1).webp' },
@@ -559,7 +560,16 @@ const [submitted, setSubmitted] = useState(false);
                   className="mt-1 w-5 h-5 text-[#e63946] rounded focus:ring-[#e63946]"
                 />
                 <span className="text-gray-600 text-sm">
-                  I agree to the Terms & Conditions and understand that once the design is approved and production begins, the order is non-refundable.
+                  I agree to the{' '}
+                  <Link
+                    href="/terms"
+                    target="_blank"
+                    className="text-[#e63946] font-semibold hover:underline"
+                  >
+                    Terms &amp; Conditions
+                  </Link>{' '}
+                  and understand that once the design is approved and production begins, the order
+                  is non-refundable.
                 </span>
               </label>
             </div>

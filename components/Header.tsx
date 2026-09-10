@@ -111,6 +111,13 @@ export default function Header() {
             </div>
 
             <Link
+              href="/pricing"
+              className={`font-medium transition-colors ${pathname === '/pricing' ? 'text-[#e63946]' : 'text-gray-700 hover:text-[#e63946]'
+                }`}
+            >
+              Pricing
+            </Link>
+            <Link
               href="/samples"
               className={`font-medium transition-colors ${pathname === '/samples' ? 'text-[#e63946]' : 'text-gray-700 hover:text-[#e63946]'
                 }`}
@@ -189,6 +196,9 @@ export default function Header() {
                 )}
               </div>
 
+              <Link href="/pricing" className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">
+                Pricing
+              </Link>
               <Link href="/samples" className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">
                 Samples
               </Link>
