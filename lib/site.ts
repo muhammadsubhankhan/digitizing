@@ -15,6 +15,13 @@ if (SITE_URL.includes('example.com')) {
   );
 }
 
+/**
+ * Google Analytics 4 measurement ID. Measurement IDs are public by design —
+ * they appear in the page source — so the fallback below is safe to commit.
+ * Override with NEXT_PUBLIC_GA_ID to point a staging deploy at a different property.
+ */
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID ?? 'G-H56TN6L5P6';
+
 export const SITE_NAME = 'Custom Patch House';
 
 export const CONTACT = {

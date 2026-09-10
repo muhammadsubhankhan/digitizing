@@ -15,7 +15,7 @@ export const LEGAL = {
   /** Whose law governs the terms, e.g. "the State of Texas, USA". */
   governingLaw: 'the State of Texas, USA',
   /** Shown as "Last updated" on both pages. */
-  lastUpdated: '10 September 2026',
+  lastUpdated: '11 September 2026',
 };
 
 export type LegalSection = { heading: string; body: string[] };
@@ -138,16 +138,19 @@ export const privacySections: LegalSection[] = [
     body: [
       `**Email delivery.** Confirmation emails are sent through Resend, an email delivery provider, which processes the recipient address and message content in order to deliver it.`,
       `**Hosting and storage.** This website and its content are hosted with our hosting provider, and blog content is stored in a managed MongoDB database.`,
+      `**Analytics.** Google Analytics receives anonymised usage data about visits to this website, as described under Cookies and analytics below. It does not receive your quote details, your artwork or your contact information.`,
       `**Shipping.** Courier partners receive the name, address and contact number needed to deliver your order.`,
       `That is the full list. We do not sell personal information, and we do not share it with advertisers or data brokers.`,
     ],
   },
   {
-    heading: 'Cookies',
+    heading: 'Cookies and analytics',
     body: [
-      `This website does not use advertising or tracking cookies.`,
-      `A single session cookie is used to keep the site administrator signed in to the private admin area. It is not set for ordinary visitors and it does not track browsing.`,
-      `If we add website analytics in future, this page will be updated before we do.`,
+      `We use Google Analytics to understand how the site is used — which pages people visit, how they arrived, roughly where in the world they are, and what device they are on. This is measurement, not advertising: we use it to see which pages are useful and which are not.`,
+      `Google Analytics sets cookies in your browser to recognise a returning visit. It records your activity on this site, not your activity elsewhere, and we have not enabled Google's advertising or remarketing features. IP addresses are anonymised by Google before they reach us, and we cannot identify you personally from anything in our analytics.`,
+      `You can opt out at any time by installing Google's official browser add-on, by using your browser's do-not-track or cookie-blocking settings, or by browsing in private mode. Nothing on this site stops working if you do.`,
+      `Separately, a single session cookie keeps the site administrator signed in to the private admin area. It is not set for ordinary visitors.`,
+      `We do not use advertising cookies, and we do not sell or share analytics data with advertisers.`,
     ],
   },
   {
