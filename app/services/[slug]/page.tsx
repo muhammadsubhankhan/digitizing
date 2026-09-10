@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
+import FAQ from '@/components/FAQ';
 import { services, serviceSlugs, serviceTitle } from '@/lib/services';
 import { breadcrumbSchema, serviceSchema, faqPageSchema } from '@/lib/schema';
 
@@ -185,24 +186,13 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      {/* Page-specific FAQ */}
-      <section className="py-16 lg:py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#1d3557] mb-8">
-              {serviceTitle(service.name)} — frequently asked questions
-            </h2>
-            <dl className="space-y-8">
-              {service.faqs.map((faq) => (
-                <div key={faq.question}>
-                  <dt className="text-xl font-semibold text-[#1d3557] mb-3">{faq.question}</dt>
-                  <dd className="text-gray-600 text-lg leading-relaxed">{faq.answer}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-      </section>
+      {/* Page-specific FAQ — the same accordion the home page uses */}
+      <FAQ
+        items={service.faqs}
+        heading={`${serviceTitle(service.name)} Questions`}
+        subheading={`What people ask us before ordering ${service.name.toLowerCase()}`}
+        showCta={false}
+      />
 
       {/* CTA Section */}
       <section className="py-16 lg:py-24 bg-gray-50">

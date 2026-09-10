@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
+import FAQ from '@/components/FAQ';
 import { industries, type Industry } from '@/lib/industries';
 import { breadcrumbSchema, faqPageSchema, serviceAudienceSchema } from '@/lib/schema';
 
@@ -175,24 +176,13 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16 lg:py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#1d3557] mb-8">
-              {industry.name} — frequently asked questions
-            </h2>
-            <dl className="space-y-8">
-              {industry.faqs.map((faq) => (
-                <div key={faq.question}>
-                  <dt className="text-xl font-semibold text-[#1d3557] mb-3">{faq.question}</dt>
-                  <dd className="text-gray-600 text-lg leading-relaxed">{faq.answer}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-      </section>
+      {/* FAQ — the same accordion the home page uses */}
+      <FAQ
+        items={industry.faqs}
+        heading={`${industry.name} Questions`}
+        subheading={`What people ask us before ordering ${industry.name.toLowerCase()}`}
+        showCta={false}
+      />
 
       {/* CTA */}
       <section className="py-16 lg:py-24">
