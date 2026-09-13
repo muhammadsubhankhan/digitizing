@@ -23,12 +23,15 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="text-white animate-fadeInUp">
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
-              Eye-Popping <span className="text-[#f4a261]">Embroidered</span> Custom Patches for Every Industry
+            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-6">
+              Custom Patches for <span className="text-[#f4a261]">Brands, Teams &amp; Organizations</span> Across the United States
             </h1>
-            <p className="text-lg lg:text-xl text-gray-200 mb-8 max-w-xl">
-              Transform your ideas into stunning custom patches with premium quality embroidery.
-              Perfect for businesses, teams, events, and personal projects.
+            <p className="text-base lg:text-lg text-gray-200 mb-8 max-w-xl">
+              Turn your logo, artwork, or original idea into <strong className="font-semibold text-white">high-quality custom patches</strong> made
+              specifically for your brand, team, or organization. Whether you need patches for a business,
+              sports team, school, military unit, motorcycle club, fashion brand, or special event, we make
+              it easy to bring your design to life. Choose your preferred size, shape, design, and quantity,
+              and order <strong className="font-semibold text-white">custom-made patches</strong> that fit your needs and budget.
             </p>
 
             {/* CTA Buttons */}

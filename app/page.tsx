@@ -1,11 +1,22 @@
-import { Hero, Description, ProcessSteps, Creations, Reviews, Stats, FAQ } from '@/components';
+import {
+  Hero,
+  Description,
+  WhyChoose,
+  ProcessSteps,
+  ServiceShowcase,
+  Creations,
+  Stats,
+  OrderQuantity,
+  Reviews,
+  FAQ,
+} from '@/components';
 import JsonLd from '@/components/JsonLd';
 import { faqSchema } from '@/lib/schema';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Custom Embroidered Patches | Premium Quality Custom Patches',
-  description: 'Get eye-popping embroidered custom patches for every industry. Premium quality, fast delivery, affordable prices. Order custom patches for businesses, teams, and personal projects.',
+  title: 'Custom Patches USA | Bulk Orders, No Minimums & Free Design Help',
+  description: 'Shop Custom Patches for Hats & Apparel in the USA. Order online with fast production, free design help, and reliable shipping for quality you\u2019ll love.',
   alternates: { canonical: '/' },
   openGraph: { url: '/' },
 };
@@ -16,10 +27,13 @@ export default function Home() {
       <JsonLd data={faqSchema} />
       <Hero />
       <Description />
+      <WhyChoose />
       <ProcessSteps />
+      <ServiceShowcase />
       <Creations />
-      <Reviews />
       <Stats />
+      <OrderQuantity />
+      <Reviews />
       <FAQ />
     </>
   );

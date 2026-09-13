@@ -69,11 +69,12 @@ export default function ProcessSteps() {
             HOW IT WORKS
           </span>
           <h2 className="text-3xl lg:text-5xl font-bold text-[#1d3557] mb-5 leading-tight">
-            Simple Steps To Get Your Unique
-            <span className="block text-[#e63946] mt-2">Custom Embroidered Patches</span>
+            Simple Steps to Order
+            <span className="block text-[#e63946] mt-2">Custom Patches Online</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-            Our streamlined 4-step process makes it incredibly easy to get premium quality custom patches delivered to your door
+            Our streamlined 4-step process makes it easy to order personalized patches with quality
+            production and reliable service.
           </p>
         </div>
 

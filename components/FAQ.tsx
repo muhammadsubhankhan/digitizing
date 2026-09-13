@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { faqs, type Faq } from '@/lib/faqs';
+import { homeFaqs, type Faq } from '@/lib/faqs';
 
 type Props = {
-  /** Defaults to the site-wide FAQs used on the home page. */
+  /** Defaults to the eight FAQs used on the home page. */
   items?: Faq[];
   eyebrow?: string;
   heading?: string;
@@ -14,7 +14,7 @@ type Props = {
 };
 
 export default function FAQ({
-  items = faqs,
+  items = homeFaqs,
   eyebrow = 'FAQ',
   heading = 'We Know Your Confusions',
   subheading = 'Find answers to frequently asked questions about our custom patch services',

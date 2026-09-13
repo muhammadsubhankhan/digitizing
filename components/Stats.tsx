@@ -100,10 +100,11 @@ export default function Stats() {
     <section className="py-10 gradient-bg">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl lg:text-5xl font-bold text-center text-white mb-6">
-          Delivering Durable and Customised Embroidered Badges Since 2010
+          Delivering Durable and Affordable Customised Patches Since 2010
         </h2>
-        <p className="text-center text-gray-200 mb-24 max-w-2xl mx-auto text-xl leading-relaxed">
-          Our commitment to quality and customer satisfaction has made us a trusted name in the industry
+        <p className="text-center text-gray-200 mb-24 max-w-3xl mx-auto text-xl leading-relaxed">
+          Our focus on quality, durability, and customer satisfaction makes it easy to order custom
+          patches you can confidently wear, sell, or distribute.
         </p>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-24">

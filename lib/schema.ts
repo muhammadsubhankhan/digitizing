@@ -1,5 +1,5 @@
 import { SITE_NAME, SITE_URL, CONTACT, SOCIAL_PROFILES, absoluteUrl } from './site';
-import { faqs } from './faqs';
+import { homeFaqs } from './faqs';
 import type { Service } from './services';
 import type { Post } from './posts';
 import type { Industry } from './industries';
@@ -46,7 +46,7 @@ export const websiteSchema = {
 export const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
+  mainEntity: homeFaqs.map((faq) => ({
     '@type': 'Question',
     name: faq.question,
     acceptedAnswer: { '@type': 'Answer', text: faq.answer },

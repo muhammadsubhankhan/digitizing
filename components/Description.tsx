@@ -13,28 +13,30 @@ export default function Description() {
     <section className="py-10!">
       <div className="container mx-auto px-4">
         <h2 className="section-title max-w-3xl mx-auto! text-center">
-          Eye-Popping Embroidered Custom Patches for Every Industry
+          Custom Patches Made to Order for Every Industry Across the USA
         </h2>
 
         <div className="grid lg:grid-cols-3 gap-16 mt-16 ">
           {/* Description */}
           <div className="space-y-8 col-span-2">
             <p className="text-gray-600 text-lg leading-relaxed">
-              At Embroidered Patches, we specialize in creating premium quality custom patches
-              that bring your designs to life. Whether you need patches for your business,
-              sports team, military unit, motorcycle club, or any other purpose, we have the
-              expertise to deliver exceptional results.
+              Bring your logo, artwork, or original idea to life with{' '}
+              <strong className="font-semibold text-[#1d3557]">custom patches made to your exact requirements</strong>.
+              We create high-quality patches for businesses, sports teams, schools, motorcycle clubs,
+              military units, fashion brands, and organizations across the{' '}
+              <strong className="font-semibold text-[#1d3557]">United States</strong>.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed">
-              Our state-of-the-art embroidery machines and skilled artisans ensure every stitch
-              is perfect. We use only the highest quality materials, including premium threads
-              and durable backing options, to create patches that last for years.
+              Whether you&apos;re ordering a small batch for your team or a larger quantity for your business,
+              we make it easy to <strong className="font-semibold text-[#1d3557]">order custom patches online</strong>.
+              Choose your preferred size, shape, design, and quantity, and our team will help turn your
+              artwork into patches that look professional and represent your brand.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed">
-              From simple logos to intricate designs, we can handle projects of any complexity.
-              Our design team works closely with you to ensure your vision is realized exactly
-              as you imagined. With competitive pricing and fast turnaround times, we make
-              custom patches accessible to everyone.
+              Not sure if your design is ready for production? Our design team can help refine your artwork
+              and prepare it for a clean, professional finish. With{' '}
+              <strong className="font-semibold text-[#1d3557]">competitive pricing, quality production, and reliable turnaround</strong>,
+              you can get custom patches without the hassle of managing the process yourself.
             </p>
 
             <div className="grid grid-cols-2 gap-5 pt-6">
