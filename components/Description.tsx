@@ -20,59 +20,23 @@ export default function Description() {
           {/* Description */}
           <div className="space-y-8 col-span-2">
             <p className="text-gray-600 text-lg leading-relaxed">
-              Bring your logo, artwork, or original idea to life with{' '}
-              <strong className="font-semibold text-[#1d3557]">custom patches made to your exact requirements</strong>.
-              We create high-quality patches for businesses, sports teams, schools, motorcycle clubs,
-              military units, fashion brands, and organizations across the{' '}
-              <strong className="font-semibold text-[#1d3557]">United States</strong>.
+              Bring your logo, artwork, or original idea to life with custom patches made to your
+              exact requirements. We create high-quality patches for businesses, sports teams,
+              schools, motorcycle clubs, military units, fashion brands, and organizations across
+              the United States.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed">
               Whether you&apos;re ordering a small batch for your team or a larger quantity for your business,
-              we make it easy to <strong className="font-semibold text-[#1d3557]">order custom patches online</strong>.
+              we make it easy to order custom patches online.
               Choose your preferred size, shape, design, and quantity, and our team will help turn your
               artwork into patches that look professional and represent your brand.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed">
               Not sure if your design is ready for production? Our design team can help refine your artwork
-              and prepare it for a clean, professional finish. With{' '}
-              <strong className="font-semibold text-[#1d3557]">competitive pricing, quality production, and reliable turnaround</strong>,
-              you can get custom patches without the hassle of managing the process yourself.
+              and prepare it for a clean, professional finish. With competitive pricing, quality production,
+              and reliable turnaround, you can get custom patches without the hassle of managing the
+              process yourself.
             </p>
-
-            <div className="grid grid-cols-2 gap-5 pt-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[#e63946]/10 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-[#e63946]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <span className="font-medium text-[#1d3557]">Premium Quality</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[#e63946]/10 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-[#e63946]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <span className="font-medium text-[#1d3557]">Fast Delivery</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[#e63946]/10 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-[#e63946]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <span className="font-medium text-[#1d3557]">Affordable Prices</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[#e63946]/10 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-[#e63946]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <span className="font-medium text-[#1d3557]">Free Design Help</span>
-              </div>
-            </div>
           </div>
 
           {/* Carousel */}

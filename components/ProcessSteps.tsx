@@ -148,7 +148,7 @@ export default function ProcessSteps() {
               <p className="text-lg font-semibold">Get your custom patches in 4 simple steps</p>
             </div>
             <a href="/free-instant-quote" className="bg-[#e63946] hover:bg-[#c1121f] text-white px-8 py-3 rounded-xl font-semibold transition-colors flex items-center gap-2 shadow-lg">
-              Start Now
+              Order Now
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

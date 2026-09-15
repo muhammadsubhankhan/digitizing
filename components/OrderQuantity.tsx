@@ -35,14 +35,11 @@ export default function OrderQuantity() {
           {/* No minimum order */}
           <div className="bg-[#e63946] text-white rounded-2xl p-6! lg:p-8! shadow-xl flex flex-col">
             <span className="text-xs font-bold tracking-[0.2em] text-white/70 uppercase mb-3">
-              Need only one patch?
-            </span>
-            <h2 className="text-xl lg:text-2xl font-bold mb-2 leading-tight">
               Need Just One Patch? No Problem.
-            </h2>
-            <h3 className="text-base font-semibold text-white/90 mb-4">
+            </span>
+            <h2 className="text-xl lg:text-2xl font-bold mb-4 leading-tight">
               Custom Patches With No Minimum Order
-            </h3>
+            </h2>
             <p className="text-white/85 text-sm leading-relaxed mb-5">
               Whether you need one custom patch or a small batch, we make ordering simple. Get
               personalized patches made to your specifications without being tied to a large quantity.
